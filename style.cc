@@ -1,9 +1,9 @@
 /* General Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background: #023020; /* Dark Green */
+    background: #012A12; /* Darker Green */
     color: white;
     transition: background 0.3s, color 0.3s;
 }
@@ -13,14 +13,13 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #1b5e20;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: #004d00;
     color: white;
     padding: 15px 50px;
-    transition: background 0.3s;
-}
-
-header:hover {
-    background: #146414;
+    z-index: 1000;
 }
 
 .logo {
@@ -44,22 +43,17 @@ nav ul li a {
 
 nav ul li a:hover {
     color: #ffcc00;
-    transform: scale(1.1);
 }
 
-/* Theme Toggle */
-#themeToggle {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 20px;
-    cursor: pointer;
-}
-
-/* Sections */
-main {
+/* Full-Screen Sections */
+.section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    padding: 50px 20px;
+    scroll-snap-align: start;
 }
 
 /* Button */
@@ -70,7 +64,6 @@ main {
     border: none;
     cursor: pointer;
     transition: transform 0.3s ease, background 0.3s ease;
-    position: relative;
 }
 
 .cta-button:hover {
@@ -78,20 +71,21 @@ main {
     transform: scale(1.1);
 }
 
-/* 3D Effect */
-.project {
-    background: white;
-    padding: 20px;
-    box-shadow: 0px 5px 10px rgba(0,0,0,0.1);
-    border-radius: 10px;
+/* Images */
+.profile-img, .about-img, .project img {
     width: 250px;
-    text-align: center;
-    color: black;
-    transition: transform 0.3s ease;
+    height: auto;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(255, 255, 255, 0.2);
 }
 
-.project:hover {
-    transform: rotateY(10deg);
+/* Projects */
+.project-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
 }
 
 /* Contact */
@@ -104,10 +98,4 @@ main {
 
 .social-links a:hover {
     color: #ffaa00;
-}
-
-/* Dark Mode */
-.dark-mode {
-    background: #111;
-    color: white;
 }
