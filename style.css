@@ -3,11 +3,12 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background: url('https://raw.githubusercontent.com/yourusername/yourrepository/main/UFGATORLOGO.jpg') no-repeat center center fixed;
-    background-size: cover; /* Ensures full coverage */
+    background: url('https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPOSITORY/main/UFGATORLOGO.jpg') no-repeat center center fixed;
+    background-size: cover; /* Ensures the logo fills the screen */
     color: #EAEAEA; /* Light Gray Text */
     overflow-x: hidden;
 }
+
 
 /* 🔵 Navbar */
 header {
