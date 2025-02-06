@@ -5,7 +5,7 @@ body {
     padding: 0;
     background: #012A12; /* Dark Green */
     color: white;
-    scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 /* Fixed Navigation Bar */
@@ -44,8 +44,16 @@ nav ul li a:hover {
     transform: scale(1.1) translateY(-3px);
 }
 
-/* Full-Screen Sections */
+/* Horizontal Scrolling */
+.horizontal-container {
+    display: flex;
+    width: 400vw; /* 4 sections * 100vw each */
+    height: 100vh;
+    transition: transform 0.5s ease-in-out;
+}
+
 .section {
+    width: 100vw;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -72,6 +80,9 @@ nav ul li a:hover {
 
 /* Footer */
 footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
     background: #003300;
     padding: 20px;
     text-align: center;
