@@ -1,4 +1,4 @@
-// Smooth Scroll for Vertical Sections
+// Smooth Scroll for Navigation Links
 document.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', function (e) {
         e.preventDefault();
@@ -13,8 +13,8 @@ document.querySelectorAll('.nav-link').forEach(link => {
 window.addEventListener("scroll", () => {
     let currentSection = "";
     document.querySelectorAll(".section").forEach(section => {
-        const sectionTop = section.offsetTop;
-        if (window.scrollY >= sectionTop - 100) {
+        const sectionTop = section.offsetTop - 100;
+        if (window.scrollY >= sectionTop) {
             currentSection = section.getAttribute("id");
         }
     });
@@ -27,7 +27,7 @@ window.addEventListener("scroll", () => {
     });
 });
 
-// Smooth Fade-in Animation on Load
+// Fade-in Animation on Load
 document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll(".fade-in").forEach(el => {
         el.style.opacity = 0;
