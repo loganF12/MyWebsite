@@ -3,12 +3,14 @@ document.getElementById('themeToggle').addEventListener('click', function() {
     document.body.classList.toggle('dark-mode');
 });
 
-// Smooth Scrolling for Navbar Links
-document.querySelectorAll('.nav-link').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
+// Smooth Horizontal Scrolling for Navbar Links
+const sections = document.querySelectorAll('.section');
+const container = document.querySelector('.horizontal-container');
+const links = document.querySelectorAll('.nav-link');
+
+links.forEach((link, index) => {
+    link.addEventListener('click', function(e) {
         e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
+        container.style.transform = `translateX(-${index * 100}vw)`;
     });
 });
