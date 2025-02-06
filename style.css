@@ -3,14 +3,13 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background: url('https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPOSITORY/main/UFGATORLOGO.jpg') no-repeat center center fixed;
-    background-size: cover; /* Ensures the logo fills the screen */
-    color: #EAEAEA; /* Light Gray Text */
+    background: url('https://raw.githubusercontent.com/loganF12/MyWebsite/main/UFGATORLOGO.jpg') no-repeat center center fixed;
+    background-size: cover; /* Ensures full coverage */
+    color: white;
     overflow-x: hidden;
 }
 
-
-/* 🔵 Navbar */
+/* 🔵 Fixed Navbar */
 header {
     display: flex;
     justify-content: space-between;
@@ -19,16 +18,17 @@ header {
     width: 100%;
     top: 0;
     left: 0;
-    background: rgba(26, 26, 26, 0.9); /* Dark Gray with Transparency */
+    background: rgba(0, 0, 0, 0.85); /* Solid dark background to separate from logo */
     padding: 12px 40px;
     z-index: 1000;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
 }
 
+/* Logo Styling */
 .logo {
     font-size: 22px;
     font-weight: bold;
-    color: #FFFFFF;
+    color: #ffcc00; /* UF Accent Color */
     text-transform: uppercase;
     letter-spacing: 1px;
 }
@@ -37,7 +37,7 @@ header {
 nav ul {
     list-style: none;
     display: flex;
-    gap: 25px;
+    gap: 20px;
     padding: 0;
     margin: 0;
 }
@@ -47,21 +47,20 @@ nav ul li {
 }
 
 nav ul li a {
-    background: rgba(51, 51, 51, 0.8); /* Semi-transparent buttons */
+    background: rgba(255, 255, 255, 0.2); /* Transparent buttons */
     padding: 10px 18px;
     border-radius: 5px;
-    color: #EAEAEA;
+    color: white;
     text-decoration: none;
     font-size: 14px;
     font-weight: bold;
-    transition: transform 0.2s ease, background 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.2s ease, background 0.3s ease;
 }
 
 nav ul li a:hover {
-    background: #FFFFFF;
-    color: #1A1A1A;
+    background: #ffcc00;
+    color: #002800;
     transform: scale(1.1);
-    box-shadow: 0px 3px 10px rgba(255, 255, 255, 0.2);
 }
 
 /* 🔵 Vertical Sections */
@@ -73,12 +72,12 @@ nav ul li a:hover {
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 40px;
-    background: rgba(0, 0, 0, 0.6); /* Adds slight transparency over the UF logo */
-    backdrop-filter: blur(5px); /* Softens the background */
+    padding: 50px;
+    background: rgba(0, 0, 0, 0.5); /* Darker overlay to improve text visibility */
+    backdrop-filter: blur(5px);
 }
 
-/* Image Styling */
+/* Image Fix */
 img {
     width: 220px;
     height: auto;
@@ -89,7 +88,7 @@ img {
 
 /* Buttons */
 .cta-button {
-    background: #FFFFFF;
+    background: #ffcc00;
     color: #121212;
     padding: 14px 28px;
     font-size: 16px;
@@ -101,18 +100,17 @@ img {
 }
 
 .cta-button:hover {
-    background: #CCCCCC;
+    background: #ffaa00;
     transform: scale(1.08);
 }
 
 /* Footer */
 footer {
     width: 100%;
-    background: rgba(26, 26, 26, 0.9);
-    padding: 12px;
+    background: rgba(0, 0, 0, 0.85);
+    padding: 15px;
     text-align: center;
     font-size: 14px;
-    margin-top: 40px;
 }
 
 footer .social-links {
@@ -123,12 +121,12 @@ footer .social-links {
 }
 
 footer .social-links a {
-    color: #EAEAEA;
+    color: white;
     text-decoration: none;
     font-size: 16px;
     transition: color 0.3s ease;
 }
 
 footer .social-links a:hover {
-    color: #FFFFFF;
+    color: #ffcc00;
 }
