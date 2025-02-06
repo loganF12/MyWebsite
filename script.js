@@ -10,12 +10,27 @@ links.forEach((link, index) => {
     });
 });
 
-// Reveal Elements on Scroll
-document.addEventListener("scroll", function () {
-    document.querySelectorAll(".fade-in, .slide-in").forEach(el => {
-        let rect = el.getBoundingClientRect();
-        if (rect.top < window.innerHeight * 0.85) {
-            el.style.animationPlayState = "running";
+// Active Navbar Link Indicator
+window.addEventListener("scroll", () => {
+    let currentSection = "";
+    sections.forEach((section) => {
+        const sectionTop = section.offsetLeft;
+        if (scrollX >= sectionTop - 200) {
+            currentSection = section.getAttribute("id");
         }
+    });
+
+    links.forEach((link) => {
+        link.classList.remove("active");
+        if (link.getAttribute("href").includes(currentSection)) {
+            link.classList.add("active");
+        }
+    });
+});
+
+// Smooth Fade-in Animation on Load
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".fade-in").forEach((el) => {
+        el.style.animation = "fadeIn 1s ease-in-out forwards";
     });
 });
