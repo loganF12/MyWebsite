@@ -3,9 +3,26 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background: #012A12; /* Dark Green */
+    background: linear-gradient(120deg, #021a0f, #012A12); /* Dark Green Gradient */
     color: white;
     overflow-x: hidden;
+}
+
+/* Smooth Animations */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+.slide-in {
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: slideIn 1s ease-in-out forwards;
+}
+
+.delay {
+    animation-delay: 0.3s;
 }
 
 /* Fixed Navigation Bar */
@@ -16,7 +33,8 @@ header {
     position: fixed;
     width: 100%;
     top: 0;
-    background: #004d00;
+    background: rgba(0, 0, 0, 0.6); /* Glassmorphism */
+    backdrop-filter: blur(10px);
     color: white;
     padding: 15px 50px;
     z-index: 1000;
@@ -47,35 +65,9 @@ nav ul li a:hover {
 /* Horizontal Scrolling */
 .horizontal-container {
     display: flex;
-    width: 400vw; /* 4 sections * 100vw each */
+    width: 400vw;
     height: 100vh;
     transition: transform 0.5s ease-in-out;
-}
-
-.section {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-/* Call to Action Button */
-.cta-button {
-    background: #ffcc00;
-    padding: 15px 30px;
-    font-size: 18px;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: transform 0.3s ease, background 0.3s ease;
-}
-
-.cta-button:hover {
-    background: #ffaa00;
-    transform: scale(1.1);
 }
 
 /* Footer */
@@ -83,25 +75,18 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
-    background: #003300;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
     padding: 20px;
     text-align: center;
 }
 
-footer .social-links {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 10px;
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-footer .social-links a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    transition: color 0.3s ease;
-}
-
-footer .social-links a:hover {
-    color: #ffcc00;
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
 }
