@@ -3,53 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My UI-Heavy Website</title>
+    <title>Logan's Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <script defer src="script.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
 
+    <!-- Navigation -->
     <header>
-        <div class="logo">MySite</div>
+        <div class="logo">Logan's Portfolio</div>
         <nav>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#" class="tab-link active" data-tab="home">Home</a></li>
+                <li><a href="#" class="tab-link" data-tab="about">About</a></li>
+                <li><a href="#" class="tab-link" data-tab="projects">Projects</a></li>
+                <li><a href="#" class="tab-link" data-tab="contact">Contact</a></li>
             </ul>
         </nav>
         <button id="themeToggle"><i class="fas fa-moon"></i></button>
     </header>
 
-    <section class="hero">
-        <h1>Welcome to My Awesome Website</h1>
-        <p>Create amazing things with ease.</p>
-        <button class="cta-button">Get Started</button>
-    </section>
+    <!-- Sections -->
+    <main>
+        <section id="home" class="tab-content active">
+            <h1>Welcome to My Portfolio</h1>
+            <p>I'm Logan, a passionate developer and student. Explore my work below.</p>
+        </section>
 
-    <section class="features">
-        <div class="feature">
-            <i class="fas fa-laptop-code"></i>
-            <h3>Easy to Edit</h3>
-            <p>Customize everything to your needs.</p>
-        </div>
-        <div class="feature">
-            <i class="fas fa-mobile-alt"></i>
-            <h3>Responsive Design</h3>
-            <p>Looks great on all devices.</p>
-        </div>
-        <div class="feature">
-            <i class="fas fa-bolt"></i>
-            <h3>Fast & Optimized</h3>
-            <p>Lightweight and high performance.</p>
-        </div>
-    </section>
+        <section id="about" class="tab-content">
+            <h1>About Me</h1>
+            <p>I'm a college student learning web development. I enjoy coding, UI design, and creating amazing experiences.</p>
+        </section>
 
-    <footer>
-        <p>&copy; 2025 MySite. All Rights Reserved.</p>
-    </footer>
+        <section id="projects" class="tab-content">
+            <h1>My Projects</h1>
+            <div class="project-list">
+                <div class="project">
+                    <i class="fas fa-code"></i>
+                    <h3>Project 1</h3>
+                    <p>A cool web app I built using JavaScript.</p>
+                </div>
+                <div class="project">
+                    <i class="fas fa-laptop"></i>
+                    <h3>Project 2</h3>
+                    <p>Another amazing project with a responsive UI.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="tab-content">
+            <h1>Contact Me</h1>
+            <p>Get in touch with me:</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-github"></i> GitHub</a>
+                <a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="#"><i class="fas fa-envelope"></i> Email</a>
+            </div>
+        </section>
+    </main>
 
 </body>
 </html>
