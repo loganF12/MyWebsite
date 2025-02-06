@@ -3,7 +3,8 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background: #f4f4f4;
+    color: #333;
     transition: background 0.3s, color 0.3s;
 }
 
@@ -17,29 +18,29 @@ header {
     padding: 15px 50px;
 }
 
-header .logo {
+.logo {
     font-size: 24px;
     font-weight: bold;
 }
 
-header nav ul {
+nav ul {
     list-style: none;
     display: flex;
     gap: 20px;
 }
 
-header nav ul li a {
+nav ul li a {
     color: white;
     text-decoration: none;
     font-size: 18px;
     transition: color 0.3s;
 }
 
-header nav ul li a:hover {
+nav ul li a:hover, .tab-link.active {
     color: #ffcc00;
 }
 
-/* Theme Toggle Button */
+/* Theme Toggle */
 #themeToggle {
     background: none;
     border: none;
@@ -48,46 +49,30 @@ header nav ul li a:hover {
     cursor: pointer;
 }
 
-/* Hero Section */
-.hero {
+/* Sections */
+main {
     text-align: center;
-    padding: 100px 20px;
-    background: linear-gradient(to right, #007bff, #00c6ff);
-    color: white;
+    padding: 50px 20px;
 }
 
-.hero h1 {
-    font-size: 40px;
+.tab-content {
+    display: none;
+    animation: fadeIn 0.5s ease-in-out;
 }
 
-.hero p {
-    font-size: 20px;
-    margin-top: 10px;
+.tab-content.active {
+    display: block;
 }
 
-.cta-button {
-    background: #ffcc00;
-    border: none;
-    padding: 15px 30px;
-    font-size: 18px;
-    cursor: pointer;
+/* Project Section */
+.project-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
     margin-top: 20px;
 }
 
-.cta-button:hover {
-    background: #ffaa00;
-}
-
-/* Features Section */
-.features {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    padding: 50px;
-    text-align: center;
-}
-
-.feature {
+.project {
     background: white;
     padding: 20px;
     box-shadow: 0px 5px 10px rgba(0,0,0,0.1);
@@ -95,23 +80,41 @@ header nav ul li a:hover {
     width: 250px;
 }
 
-.feature i {
+.project i {
     font-size: 40px;
     color: #007bff;
 }
 
-.feature h3 {
-    margin-top: 15px;
+.project h3 {
+    margin-top: 10px;
 }
 
-.feature p {
+.project p {
     color: #555;
 }
 
-/* Footer */
-footer {
-    text-align: center;
-    padding: 20px;
+/* Contact */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.social-links a {
+    text-decoration: none;
+    font-size: 18px;
+    color: #007bff;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Dark Mode */
+.dark-mode {
     background: #222;
     color: white;
 }
