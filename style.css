@@ -3,12 +3,12 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #012A12, #021a0f);
+    background: linear-gradient(135deg, #0a2e0a, #012A12);
     color: white;
     overflow-x: hidden;
 }
 
-/* 🔵 Redesigned Header (Unique, Smaller, & Fits All Screens) */
+/* 🔵 Completely Redesigned Navbar */
 header {
     display: flex;
     justify-content: space-between;
@@ -16,26 +16,27 @@ header {
     position: fixed;
     width: 100%;
     top: 0;
-    background: #004000; /* Deep Green */
-    padding: 10px 30px;
+    left: 0;
+    background: #002200; /* Dark Green */
+    padding: 12px 40px;
     z-index: 1000;
-    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-/* 🔵 Logo */
+/* 🔵 Unique Logo Styling */
 .logo {
-    font-size: 20px;
+    font-size: 22px;
     font-weight: bold;
-    letter-spacing: 1px;
     color: #ffcc00;
     text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-/* 🔵 Navbar (More Compact & Better Fit) */
+/* 🔵 Navbar Links */
 nav ul {
     list-style: none;
     display: flex;
-    gap: 15px;
+    gap: 25px;
     padding: 0;
     margin: 0;
 }
@@ -45,23 +46,25 @@ nav ul li {
 }
 
 nav ul li a {
-    background: #005000; /* Dark Green Button */
-    padding: 8px 14px;
-    border-radius: 6px;
+    background: transparent;
+    padding: 10px 18px;
+    border: 2px solid #ffcc00;
+    border-radius: 5px;
     color: white;
     text-decoration: none;
     font-size: 14px;
+    font-weight: bold;
     transition: transform 0.2s ease, background 0.3s ease, box-shadow 0.3s ease;
 }
 
 nav ul li a:hover {
     background: #ffcc00;
     color: #002800;
-    transform: scale(1.05);
-    box-shadow: 0px 3px 8px rgba(255, 204, 0, 0.3);
+    transform: scale(1.1);
+    box-shadow: 0px 3px 10px rgba(255, 204, 0, 0.3);
 }
 
-/* 🔵 Responsive Navbar for Smaller Screens */
+/* 🔵 Responsive Navbar (Mobile) */
 @media (max-width: 768px) {
     header {
         flex-direction: column;
@@ -69,9 +72,8 @@ nav ul li a:hover {
         padding: 10px;
     }
     nav ul {
-        flex-direction: row;
-        justify-content: center;
         flex-wrap: wrap;
+        justify-content: center;
     }
     nav ul li a {
         font-size: 12px;
@@ -79,7 +81,7 @@ nav ul li a:hover {
     }
 }
 
-/* 🔵 Horizontal Scrolling Sections */
+/* 🔵 Fixed Full-Width Sections */
 .horizontal-container {
     display: flex;
     width: 400vw;
@@ -87,7 +89,7 @@ nav ul li a:hover {
     transition: transform 0.6s ease-in-out;
 }
 
-/* Section Styling */
+/* Section Layout */
 .section {
     width: 100vw;
     height: 100vh;
@@ -96,12 +98,12 @@ nav ul li a:hover {
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 30px;
+    padding: 40px;
 }
 
-/* Image Styling */
+/* Image Fix */
 img {
-    width: 200px;
+    width: 220px;
     height: auto;
     margin-top: 20px;
     border-radius: 8px;
@@ -111,7 +113,7 @@ img {
 /* Buttons */
 .cta-button {
     background: #ffcc00;
-    padding: 12px 25px;
+    padding: 14px 28px;
     font-size: 16px;
     border: none;
     border-radius: 25px;
@@ -121,7 +123,7 @@ img {
 
 .cta-button:hover {
     background: #ffaa00;
-    transform: scale(1.05);
+    transform: scale(1.08);
 }
 
 /* Footer */
@@ -130,7 +132,7 @@ footer {
     bottom: 0;
     width: 100%;
     background: #001a00;
-    padding: 10px;
+    padding: 12px;
     text-align: center;
     font-size: 14px;
 }
