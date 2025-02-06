@@ -3,12 +3,14 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background: #012A12; /* Darker Green */
+    background: #012A12; /* Dark Green */
     color: white;
-    transition: background 0.3s, color 0.3s;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
 }
 
-/* Header */
+/* Fixed Navigation Bar */
 header {
     display: flex;
     justify-content: space-between;
@@ -22,12 +24,6 @@ header {
     z-index: 1000;
 }
 
-.logo {
-    font-size: 24px;
-    font-weight: bold;
-}
-
-/* Navigation */
 nav ul {
     list-style: none;
     display: flex;
@@ -86,16 +82,4 @@ nav ul li a:hover {
     justify-content: center;
     gap: 20px;
     margin-top: 20px;
-}
-
-/* Contact */
-.social-links a {
-    text-decoration: none;
-    font-size: 18px;
-    color: #ffcc00;
-    transition: color 0.3s ease;
-}
-
-.social-links a:hover {
-    color: #ffaa00;
 }
