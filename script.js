@@ -3,7 +3,7 @@ document.getElementById('themeToggle').addEventListener('click', function() {
     document.body.classList.toggle('dark-mode');
 });
 
-// Smooth Scrolling
+// Smooth Scrolling for Navbar Links
 document.querySelectorAll('.nav-link').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
