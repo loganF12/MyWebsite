@@ -1,26 +1,25 @@
-// Smooth Horizontal Scroll Effect
-const sections = document.querySelectorAll('.section');
-const container = document.querySelector('.horizontal-container');
-const links = document.querySelectorAll('.nav-link');
-
-links.forEach((link, index) => {
+// Smooth Scroll for Vertical Sections
+document.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', function (e) {
         e.preventDefault();
-        container.style.transform = `translateX(-${index * 100}vw)`;
+        const targetSection = document.querySelector(this.getAttribute('href'));
+        targetSection.scrollIntoView({
+            behavior: 'smooth'
+        });
     });
 });
 
 // Active Navbar Link Indicator
 window.addEventListener("scroll", () => {
     let currentSection = "";
-    sections.forEach((section) => {
-        const sectionTop = section.offsetLeft;
-        if (scrollX >= sectionTop - 200) {
+    document.querySelectorAll(".section").forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (window.scrollY >= sectionTop - 100) {
             currentSection = section.getAttribute("id");
         }
     });
 
-    links.forEach((link) => {
+    document.querySelectorAll(".nav-link").forEach(link => {
         link.classList.remove("active");
         if (link.getAttribute("href").includes(currentSection)) {
             link.classList.add("active");
@@ -30,7 +29,13 @@ window.addEventListener("scroll", () => {
 
 // Smooth Fade-in Animation on Load
 document.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll(".fade-in").forEach((el) => {
-        el.style.animation = "fadeIn 1s ease-in-out forwards";
+    document.querySelectorAll(".fade-in").forEach(el => {
+        el.style.opacity = 0;
+        el.style.transform = "translateY(20px)";
+        el.style.transition = "opacity 1s ease-out, transform 1s ease-out";
+        setTimeout(() => {
+            el.style.opacity = 1;
+            el.style.transform = "translateY(0)";
+        }, 300);
     });
 });
