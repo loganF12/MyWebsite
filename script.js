@@ -1,23 +1,28 @@
+// Dark Mode Toggle
 document.getElementById('themeToggle').addEventListener('click', function() {
     document.body.classList.toggle('dark-mode');
 });
 
-document.body.classList.add(localStorage.getItem('theme') || 'light-mode');
-
-document.getElementById('themeToggle').addEventListener('click', function() {
-    if (document.body.classList.contains('dark-mode')) {
-        localStorage.setItem('theme', 'dark-mode');
-    } else {
-        localStorage.setItem('theme', 'light-mode');
-    }
+// Tab Navigation
+document.querySelectorAll('.tab-link').forEach(tab => {
+    tab.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelectorAll('.tab-link').forEach(link => link.classList.remove('active'));
+        document.querySelectorAll('.tab-content').forEach(section => section.classList.remove('active'));
+        document.getElementById(this.dataset.tab).classList.add('active');
+        this.classList.add('active');
+    });
 });
 
-/* Smooth Scroll Effect */
-document.querySelectorAll('nav ul li a').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
+// Button Hover Effect (Mouse Position Tilt)
+document.querySelectorAll('.cta-button, .project').forEach(item => {
+    item.addEventListener('mousemove', function(e) {
+        let x = (window.innerWidth / 2 - e.pageX) / 25;
+        let y = (window.innerHeight / 2 - e.pageY) / 25;
+        this.style.transform = `rotateX(${y}deg) rotateY(${x}deg)`;
+    });
+
+    item.addEventListener('mouseleave', function() {
+        this.style.transform = "rotateX(0) rotateY(0)";
     });
 });
